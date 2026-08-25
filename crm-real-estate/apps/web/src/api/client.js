@@ -33,7 +33,12 @@ api.interceptors.response.use(
     const original = error.config;
     const status = error.response?.status;
 
-    if (status === 401 && !original._retry && !original.url?.includes("/auth/login")) {
+    if (
+  status === 401 &&
+  !original._retry &&
+  !original.url?.includes("/auth/login") &&
+  !original.url?.includes("/auth/refresh")
+) {
       original._retry = true;
       try {
         if (!refreshingPromise) {
