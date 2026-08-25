@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+body {
+  @apply bg-bg text-ink antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Manrope", system-ui, sans-serif;
+}
+
+::selection {
+  background-color: #f1dfc0;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #c7cbe0 transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.focus-ring {
+  @apply outline-none ring-2 ring-accent/40 ring-offset-2 ring-offset-bg;
+}
